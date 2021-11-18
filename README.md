@@ -10,6 +10,8 @@ Para trabalhar com JPA é preciso incluir no projeto uma implementação da API 
 
 Arquitetura de uma aplicação que utiliza JPA:
 
+![myImage](https://github.com/Romariorfr/aula-JPA--Hibernate/blob/master/img-arquitetura-jpa.png)
+
 
 
 ### Principais classes:
