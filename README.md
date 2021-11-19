@@ -1,5 +1,5 @@
 # Aula JPA e Hibernate
-###### Estudo focado no aprendizado de mapeamento objeto-relacional com JPA.
+###### Estudo focado no aprendizado de mapeamento objeto-relacional(ORM) com JPA.
 
 ## JPA
 Java Persistence API (JPA) é a especificação padrão da plataforma Java EE (pacote javax.persistence) para mapeamento objeto-relacional e persistência de dados.
