@@ -30,3 +30,48 @@ Um objeto EntityManagerFactory é utilizado para instanciar objetos EntityManage
 
 Escopo: tipicamente mantem-se uma instância única de EntityManagerFactory para toda aplicação.
 
+## 1. Metodos e funcionalidades 🎁
+### 1.1 Descrição:
+Foi criado uma classe chamado pessoa contendo os atributos id,nome,email, e feito o mapeamento objeto relacional(ORM) dessa classe com as anotações do JPA.
+
+```Java
+@Entity
+public class Pessoa implements Serializable {
+		
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer id;
+	private String nome;
+	private String email;
+	
+	public Pessoa() {
+		
+	}
+```
+
+No programa principal, foi instanciada três pessoas e também um objeto EntityManagerFactory e um EntityManager. Apartir do metodo persist do EntityManager, é passado o objeto pessoa, que será posteriormente salvo no banco de dados.
+
+```Java
+	public static void main(String[] args) {
+
+		Pessoa p1 = new Pessoa(null, "Carlos da Silva", "carlos@gmail.com");
+		Pessoa p2 = new Pessoa(null, "Joaquim Torres", "joaquim@gmail.com");
+		Pessoa p3 = new Pessoa(null, "Ana Maria", "ana@gmail.com");
+
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		em.persist(p1);
+		em.persist(p2);
+		em.persist(p3);
+		em.getTransaction().commit();
+
+		System.out.println("Pronto!");
+		em.close();
+		emf.close();
+
+	}
+```
+
